@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exibição de Imagem</title>
+<style>
+  body {
+    background-color: pink;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+  }
+
+  #imagem {
+    display: none;
+    margin-top: 20px;
+  }
+
+  button {
+    background-color: #ff69b4;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    text-transform: uppercase;
+    outline: none;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #d63c78;
+  }
+</style>
+</head>
+<body>
+  <h2>Goze na cara do Ivan</h2>
+  <button id="botao" onclick="mostrarImagem()">Gozar!</button>
+  <audio id="audio" src="https://www.soundjay.com/nature/sounds/water-splash-1.mp3" controls></audio>
+  <img id="imagem" src="https://i.ibb.co/Yf7rfZX/boy-getting-splashed.png" alt="Garotinho sendo molhado">
+  <p id="contador">Clique no botão para ver a imagem!</p>
+  
+  <script>
+    var contador = 0;
+
+    function mostrarImagem() {
+      var imagem = document.getElementById("imagem");
+      var audio = document.getElementById("audio");
+      imagem.style.display = "block";
+      audio.play();
+      contador++;
+      document.getElementById("contador").textContent = "Você clicou no botão " + contador + " vezes!";
+    }
+  </script>
+</body>
+</html>
